@@ -1,10 +1,12 @@
 import time
 import os
 
+# Fungsi untuk membersihkan layar terminal
 def clear_screen():
     # "cls" untuk Windows, "clear" untuk Unix/Linux/Mac
     os.system('cls' if os.name == 'nt' else 'clear')
 
+# Fungsi untuk mencetak papan catur dengan status saat ini
 def print_board(board, step, action):
     clear_screen()
     print(f"--- Langkah {step} ---")
@@ -12,8 +14,9 @@ def print_board(board, step, action):
     for row in board:
         print("  " + " ".join(row))
     print("\n" + "="*30)
-    time.sleep(0.01) # Kecepatan animasi, bisa disesuaikan
+    time.sleep(0.6) # Kecepatan animasi, bisa disesuaikan
 
+# Fungsi untuk memeriksa apakah aman menempatkan ratu di posisi (row, col)
 def is_safe(board, row, col, N):
     # Cek baris di sebelah kiri
     for i in range(col):
@@ -32,18 +35,19 @@ def is_safe(board, row, col, N):
 
     return True
 
+# Fungsi utama untuk menyelesaikan masalah N-Queens menggunakan backtracking
 def solve_n_queens_util(board, col, N, step_counter):
     if col >= N:
         return True
 
     for i in range(N):
         step_counter[0] += 1
-        # Tandai dulu dengan '?' untuk visualisasi bahwa kita sedang mengevaluasi posisi ini
+        # Tandai posisi yang sedang dievaluasi dengan '?'
         board[i][col] = '?'
         print_board(board, step_counter[0], f"Mencoba evaluasi baris {i}, kolom {col}...")
         
         if is_safe(board, i, col, N):
-            # Aman, tempatkan ratu di posisi ini
+            # Jika aman, tempatkan ratu di posisi ini
             board[i][col] = 'Q'
             step_counter[0] += 1
             print_board(board, step_counter[0], f"Aman! Ratu ditaruh di ({i}, {col})")
@@ -65,9 +69,10 @@ def solve_n_queens_util(board, col, N, step_counter):
 
     return False
 
+# Fungsi untuk memulai proses penyelesaian N-Queens
 def solve_n_queens():
     # Ukuran papan catur (N x N)
-    N = 8
+    N = 4
     board = [['.' for _ in range(N)] for _ in range(N)]
     step_counter = [0]
     
@@ -89,5 +94,6 @@ def solve_n_queens():
     print("\n=========================")
     return True
 
+# Jalankan program
 if __name__ == "__main__":
     solve_n_queens()
