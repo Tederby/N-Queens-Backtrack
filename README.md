@@ -14,13 +14,13 @@ Algoritma backtracking digunakan untuk mencari solusi dengan cara mencoba berbag
 
 ### Indikator Visual (CLI)
 
-- . : Sel kosong.
+- `.` : Sel kosong.
 
-- ? : Sedang dievaluasi oleh algoritma.
+- `?` : Sedang dievaluasi oleh algoritma.
 
-- Q : Ratu ditempatkan (sementara/permanen jika aman).
+- `Q` : Ratu ditempatkan (sementara/permanen jika aman).
 
-- x : Jalan buntu, algoritma akan melakukan backtrack dari posisi ini.
+- `x` : Jalan buntu, algoritma akan melakukan backtrack dari posisi ini.
 
 ## Persyaratan Sistem
 
@@ -38,4 +38,4 @@ Algoritma backtracking digunakan untuk mencari solusi dengan cara mencoba berbag
 
 4. Jalankan perintah berikut:
 
-    python main.py
+```python main.py```
