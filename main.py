@@ -2,9 +2,9 @@ import time
 import os
 
 """
-Nama: Muhammad Afiffatin Hariz
-NIM: 21120124130073
-
+Muhammad Afiffatin Hariz
+2112012413073
+Algoritma Pemrograman 2026
 """
 
 # Fungsi untuk membersihkan layar terminal
