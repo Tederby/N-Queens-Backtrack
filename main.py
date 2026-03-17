@@ -1,6 +1,12 @@
 import time
 import os
 
+"""
+Nama: Muhammad Afiffatin Hariz
+NIM: 21120124130073
+
+"""
+
 # Fungsi untuk membersihkan layar terminal
 def clear_screen():
     # "cls" untuk Windows, "clear" untuk Unix/Linux/Mac
